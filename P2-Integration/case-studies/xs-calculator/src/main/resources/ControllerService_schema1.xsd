@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://provider.calculator.xs.integration.paradigms.sse.aui.ma/" xmlns:tns="http://provider.calculator.xs.integration.paradigms.sse.aui.ma/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getOsInfo" type="tns:getOsInfo"/>
+
+  <xs:element name="getOsInfoResponse" type="tns:getOsInfoResponse"/>
+
+  <xs:element name="getScreenshot" type="tns:getScreenshot"/>
+
+  <xs:element name="getScreenshotResponse" type="tns:getScreenshotResponse"/>
+
+  <xs:element name="rebootSystem" type="tns:rebootSystem"/>
+
+  <xs:element name="rebootSystemResponse" type="tns:rebootSystemResponse"/>
+
+  <xs:complexType name="getOsInfo">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getOsInfoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:operatingSystem" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="operatingSystem">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="xs:boolean"/>
+      <xs:element name="version" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getScreenshot">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getScreenshotResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:screenshot" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="screenshot">
+    <xs:sequence>
+      <xs:element name="bytes" type="xs:base64Binary" minOccurs="0"/>
+      <xs:element name="size" type="xs:int"/>
+      <xs:element name="status" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rebootSystem">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="rebootSystemResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+

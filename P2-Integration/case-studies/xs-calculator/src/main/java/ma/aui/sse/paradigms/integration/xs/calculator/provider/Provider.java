@@ -4,13 +4,13 @@ import javax.xml.ws.Endpoint;
 
 public class Provider {
 
-    private static final String URL = "http://localhost:9000/calculator";
+    private static final String URL = "http://localhost:9000/controller";
 
     public static void main(String[] args) {
 
-        Calculator calculator = new Calculator();
+        Controller controller = new Controller();
         System.out.println("Publishing Calculator Service");
-        Endpoint.publish(URL, calculator);
+        Endpoint.publish(URL, controller);
         System.out.println("Calculator Service Published");
     }
     
